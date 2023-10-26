@@ -66,7 +66,7 @@ def week_list(request):
 def display(request,day):
     #a= int(input('amt: '))
     m=d[day.lower()]
-    return render(request,'weekdays/index.html',{'msg':m})
+    return render(request,'weekdays/index.html',{'msg':m,'day':day})
     
 
 def display_num(request,num):

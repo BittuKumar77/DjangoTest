@@ -1,22 +1,15 @@
-<!-- <h1>Hello World</h1>
-<h3>message : {{msg}}</h3> -->
+{% extends "base.html" %}
 
+{% block pagetitle %} Index {% endblock pagetitle %} 
+{% block content %}
+    {% include "include.html" %}
 
-<!DOCTYPE html>
-<html lang="en">
+    <center><h1 style="color: green;">{{day|title}}'s Mesage</h1></center>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
-</head>
-
-<body>
     {% if msg != None %}
     <center><h1 style="color: blue;"><marquee>{{msg}}</marquee></h1></center>
     {% else %}
     <center><h1 style="color: red;"><marquee>No Mesage for the day</marquee></h1></center>
     {% endif %}
-</body>
 
-</html>
+{% endblock %}

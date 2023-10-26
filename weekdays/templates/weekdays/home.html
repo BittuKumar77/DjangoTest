@@ -1,20 +1,10 @@
-<!-- <h1>Hello World</h1>
-<h3>message : {{msg}}</h3> -->
+{% extends "base.html" %}
 
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-
-<body>
-    <ul>
-       
-        <!-- <li><a href="sunday">Sunday</li>
+{% block pagetitle %} Home {% endblock pagetitle %} 
+{% block content %}
+{% include "include.html" %}
+<ul>
+  <!-- <li><a href="sunday">Sunday</li>
         <li><a href="monday">Monday</li>
         <li><a href="tuesday">Tuesday</li>
         <li><a href="wednesday">Wednesday</li>
@@ -22,13 +12,9 @@
         <li><a href="friday">Friday</li>
         <li><a href="saturday">Saturday</li> -->
 
-        {% for i in col %}
-        <li><a href="{% url 'week:home' i  %}">{{i|title}}</a></li>
-        {% endfor %}
-
-
-    </ul>
-    <h1>{{msg}}</h1>
-</body>
-
-</html>
+  {% for i in col %}
+  <li><a href="{% url 'week:home' i  %}">{{i|title}}</a></li>
+  
+  {% endfor %}
+</ul>
+{% endblock content %}
